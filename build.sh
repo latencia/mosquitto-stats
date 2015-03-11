@@ -31,6 +31,8 @@ srcdeb() {
 	  cd $NAME-$VERSION && \
 		debuild -S && rm -rf $BUILD_DIR/$NAME-$VERSION && \
 		mv $BUILD_DIR/* $DEB_TARGET_DIR
+
+  rm -rf "$BUILD_DIR"
 }
 
 CMD=$1
