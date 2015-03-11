@@ -1,0 +1,10 @@
+# upstart configuration goes to /etc/init/go-daemon-debian-pkg-skel
+description "go-daemon-debian-pkg-skel agent"
+start on (local-filesystems and net-device-up IFACE!=lo)
+
+stop on runlevel [06]
+
+respawn
+respawn limit 10 10
+
+exec go-daemon-debian-pkg-skel
