@@ -1,10 +1,7 @@
-NAME=mqtt-stats
-BIN=$(NAME)
-
 all: build
 
 clean:
-	rm -f $(BIN)
+	./build.sh clean
 
 build:
 	./build.sh

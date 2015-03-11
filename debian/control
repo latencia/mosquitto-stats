@@ -1,4 +1,4 @@
-Source: mqtt-stats
+Source: mosquitto-stats
 Section: net
 Priority: extra
 Maintainer: Sergio Rubio <rubiojr@frameos.org>
@@ -8,7 +8,7 @@ Standards-Version: 3.9.2
 #Vcs-Git: git://github.com/rubiojr/go-daemon-debian-pkg-skel.git
 #Vcs-Browser: http://github.com/rubiojr/go-daemon-debian-pkg-skel
 
-Package: mqtt-stats
+Package: mosquitto-stats
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Built-Using: ${misc:Built-Using}

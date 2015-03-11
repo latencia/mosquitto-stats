@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-NAME=mqtt-stats
-VERSION=0.1
+NAME=mosquitto-stats
+VERSION=$(grep PKG_VERSION version.go | perl -pe 's|.*"([\d\.]+)".*|\1|')
 
 BUILD_DIR=$HOME/debian/tmp/$NAME
 PKG_NAME=$NAME-$VERSION
@@ -37,6 +37,7 @@ srcdeb() {
 
 CMD=$1
 ARG1=$2
+echo Building version $VERSION
 case $CMD in
   srcdeb)
     srcdeb
@@ -51,6 +52,9 @@ case $CMD in
     ;;
   format)
     gofmt -s -w **/*.go
+    ;;
+  clean)
+    rm -f $NAME
     ;;
   *)
 	  GOPATH=$PWD/vendor go build -o $NAME

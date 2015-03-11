@@ -69,7 +69,7 @@ func normalizeMetric(name string) string {
 }
 
 func main() {
-	kingpin.Version("0.1")
+	kingpin.Version(PKG_VERSION)
 
 	brokerUrls := kingpin.Flag("broker-urls", "Comman separated MQTT broker URLs").
 		Required().Default("").OverrideDefaultFromEnvar("MQTT_URLS").String()

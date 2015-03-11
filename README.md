@@ -1,3 +1,3 @@
-# mqtt-stats
+# mosquitto-stats
 
-Send Mosquitto stats to Graphite.
+Send [Mosquitto](http://mosquitto.org) stats to Graphite/InfluxDB.
