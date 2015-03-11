@@ -98,7 +98,7 @@ func Subscribe(handler mqtt.MessageHandler, args *Args) *mqtt.MqttClient {
 		<-rectp
 	}
 
-  log.Debug("Subscription to the brokers started")
+	log.Debug("Subscription to the brokers started")
 	return client
 }
 

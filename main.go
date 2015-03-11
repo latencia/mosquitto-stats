@@ -154,8 +154,7 @@ func main() {
 		}
 	}()
 
-	for {
-		time.Sleep(1 * time.Second)
-	}
-
+	// wait endlessly
+	var loop chan bool
+	loop <- true
 }
