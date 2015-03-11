@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-NAME=mosquitto-stats
+NAME=$(grep PKG_NAME version.go | perl -pe 's|.*"(.+)".*|\1|')
 VERSION=$(grep PKG_VERSION version.go | perl -pe 's|.*"([\d\.]+)".*|\1|')
 
 BUILD_DIR=$HOME/debian/tmp/$NAME
@@ -37,7 +37,7 @@ srcdeb() {
 
 CMD=$1
 ARG1=$2
-echo Building version $VERSION
+echo Building $NAME version $VERSION
 case $CMD in
   srcdeb)
     srcdeb
